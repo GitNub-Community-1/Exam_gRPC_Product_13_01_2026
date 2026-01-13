@@ -1,0 +1,6 @@
+@gRPC_Client_Product_Catalog_HostAddress = http://localhost:5071
+
+GET {{gRPC_Client_Product_Catalog_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

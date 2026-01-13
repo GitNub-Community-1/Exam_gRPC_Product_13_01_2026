@@ -1,0 +1,7 @@
+C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Server\obj\Debug\net9.0\gRPC_Server.csproj.AssemblyReference.cache
+C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Server\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Server\obj\Debug\net9.0\gRPC_Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Server\obj\Debug\net9.0\gRPC_Server.AssemblyInfoInputs.cache
+C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Server\obj\Debug\net9.0\gRPC_Server.AssemblyInfo.cs
+C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Server\obj\Debug\net9.0\gRPC_Server.csproj.CoreCompileInputs.cache
+C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Server\obj\Debug\net9.0\gRPC_Server.MvcApplicationPartsAssemblyInfo.cache

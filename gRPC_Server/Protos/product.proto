@@ -1,0 +1,65 @@
+  syntax = "proto3";
+  
+  option csharp_namespace = "gRPC_Server";
+  
+  
+  message Get_Product_Response{
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+    double price = 4;
+    int32 stock_quantity = 5;
+  }
+  
+  message Product{
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+    double price = 4;
+    int32 stock_quantity = 5;
+  }
+  
+  message Create_Product_Request{
+    string name = 1;
+    string description = 2;
+    double price = 3;
+    int32 stock_quantity = 4;
+  }
+  
+  message Update_Product_Request{
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+    double price = 4;
+    int32 stock_quantity = 5;
+  }
+  
+  message Delete_Product_Request{
+    int32 id = 1;
+  }
+
+  message Get_Product_Request {
+    int32 id = 1; 
+  }
+message Delete_Message{
+    string message = 1;
+}
+
+  message Get_All_Products_Request {
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+    double price = 4;
+    int32 stock_quantity = 5;
+  }
+  message Get_All_Products_Response { 
+    repeated Product products = 1;
+  }
+  
+  service ProductService {
+    rpc GetProduct (Get_Product_Request) returns (Get_Product_Response);
+    rpc GetAllProducts (Get_All_Products_Request) returns (Get_All_Products_Response);
+    rpc CreateProduct (Create_Product_Request) returns (Get_Product_Response);
+    rpc UpdateProduct (Update_Product_Request) returns (Get_Product_Response);
+    rpc DeleteProduct (Delete_Product_Request) returns (Delete_Message);
+  }
