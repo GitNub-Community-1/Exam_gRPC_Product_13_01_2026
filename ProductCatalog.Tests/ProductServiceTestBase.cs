@@ -34,5 +34,5 @@ public abstract class ProductServiceTestBase
     }
 
     protected gRPC_Server.Services.ProductService CreateService()
-        => new gRPC_Server.Services.ProductService(LoggerMock.Object, Context, Mapper);
+        => new gRPC_Server.Services.ProductService(LoggerMock.Object, Context, Mapper, new FilterService());
 }

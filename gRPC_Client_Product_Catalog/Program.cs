@@ -1,27 +1,38 @@
-using Grpc.Net.Client;
 using gRPC_Client;
+using Grpc.Net.Client;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add OpenAPI for convenience
-builder.Services.AddOpenApi();
+// Добавляем контроллеры
+builder.Services.AddControllers();
+
+// Добавляем Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Product Catalog gRPC Client API",
+        Version = "v1"
+    });
+});
+
+// Регистрируем gRPC‑клиент через DI
+builder.Services.AddSingleton(new ProductService.ProductServiceClient(
+    GrpcChannel.ForAddress("https://localhost:5001"))); // Убедись, что сервер слушает на этом порту
 
 var app = builder.Build();
 
+// Включаем Swagger UI
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
-
-// A simple endpoint that creates a gRPC channel to the local server and calls GetAllProducts.
-app.MapGet("/grpc-test", async () =>
-{
-    using var channel = GrpcChannel.ForAddress("https://localhost:5001");
-    var client = new ProductService.ProductServiceClient(channel);
-    var reply = await client.GetAllProductsAsync(new Get_All_Products_Request());
-    return Results.Ok(new { count = reply.Products.Count });
-});
+app.UseAuthorization();
+app.MapControllers();
 
 app.Run();
