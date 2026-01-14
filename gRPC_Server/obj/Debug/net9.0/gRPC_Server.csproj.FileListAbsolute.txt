@@ -48,3 +48,4 @@ C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Server\obj\Debug\n
 C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Server\obj\Debug\net9.0\gRPC_Server.pdb
 C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Server\obj\Debug\net9.0\gRPC_Server.genruntimeconfig.cache
 C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Server\obj\Debug\net9.0\ref\gRPC_Server.dll
+C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Server\bin\Debug\net9.0\Serilog.dll

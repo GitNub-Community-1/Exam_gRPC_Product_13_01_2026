@@ -1,0 +1,35 @@
+# Rider project settings
+.idea/
+*.iml
+
+# Build results
+bin/
+obj/
+out/
+
+# Executables and binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+
+# Logs and temp files
+*.log
+*.user
+*.suo
+*.tmp
+*.cache
+*.bak
+
+# NuGet packages
+*.nupkg
+packages/
+
+# VS Code / Rider configs
+.vscode/
+*.swp
+
+# Other system files
+Thumbs.db
+.DS_Store
