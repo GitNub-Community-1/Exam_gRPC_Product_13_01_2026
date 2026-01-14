@@ -1,10 +1,14 @@
-﻿using AutoMapper;
+﻿using System.Net;
+using AutoMapper;
 using Google.Protobuf.WellKnownTypes;
+using gRPC_Server.Models.Filters;
 using Grpc.Core;
+using Microsoft.EntityFrameworkCore;
 
 namespace gRPC_Server.Services;
 
-public class ProductService(ILogger<ProductService> _logger,ApplicationDbContext _context,IMapper _mapper) : IProductService
+public class ProductService(ILogger<ProductService> _logger, ApplicationDbContext _context, IMapper _mapper)
+    : IProductService
 {
     public async Task<Get_Product_Response> GetProductByIdAsync(Get_Product_Request request)
     {
@@ -15,53 +19,47 @@ public class ProductService(ILogger<ProductService> _logger,ApplicationDbContext
         {
             throw new RpcException(new Status(StatusCode.NotFound, "Product not found"));
         }
-        
+
         var response = _mapper.Map<Get_Product_Response>(product);
         _logger.LogInformation("Returning Product: {Name}", response.Name);
         return response;
     }
 
-    public Task<Get_All_Products_Response> GetAllProductsAsync(Get_All_Products_Request request)
+    public async Task<List<Get_All_Products_Response>> GetAllProductsAsync(Get_All_Products_Request request)
     {
+        var filter = _mapper.Map<ProductFilter>(request);
         var query = _context.Products.AsQueryable();
 
-        if (request.Id.HasValue)
+        if (filter.Id.HasValue)
         {
-            query = query.Where(x => x.Id == request.Id.Value);
+            query = query.Where(x => x.Id == filter.Id.Value);
         }
-        if (!string.IsNullOrEmpty(request.Message))
-        {
-            query = query.Where(x => x.Message.Contains(request.Message));
-        }
-        if (request.CreatedAt.HasValue)
-        {
-            query = query.Where(x => x.CreatedAt == request.CreatedAt.Value);
-        }
-        if (request.InRead.HasValue)
-        {
-            query = query.Where(x => x.InRead == request.InRead.Value);
-        }
-        if (request.Expired.HasValue)
-        {
-            query = query.Where(x => x.Expired == request.Expired.Value);
-        }
-        if (request.NotificationId.HasValue)
-        {
-            query = query.Where(x => x.NotificationId == request.NotificationId.Value);
-        }
-        var todoitem = await query.ToListAsync();
-        cachedResult = mapper.Map<List<UserNotifDto>>(todoitem);
 
-        _cache.Set(cacheKey, cachedResult);
+        if (!string.IsNullOrEmpty(filter.Name))
+        {
+            query = query.Where(x => x.Name.Contains(filter.Name));
+        }
+
+        if (!string.IsNullOrEmpty(filter.Description))
+        {
+            query = query.Where(x => x.Description.Contains(filter.Description));
+        }
+
+        if (filter.Price.HasValue)
+        {
+            query = query.Where(x => x.Price == filter.Price.Value);
+        }
+
+        if (filter.Stock_Quantity.HasValue)
+        {
+            query = query.Where(x => x.StockQuantity == filter.Stock_Quantity.Value);
+        }
+
+        var products = await query.ToListAsync();
+        return _mapper.Map<List<Get_All_Products_Response>>(products);
     }
 
-    return new Response<List<UserNotifDto>>
-    {
-        StatusCode = (int)HttpStatusCode.OK,
-        Message = "User Notification retrieved successfully!",
-        Data = cachedResult
-    };
-    }
+    
 
     public async Task<Get_Product_Response> CreateProductAsync(Create_Product_Request request)
     {
