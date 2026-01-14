@@ -175,3 +175,4 @@ C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Client_Product_Cat
 C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Client_Product_Catalog\obj\Debug\net9.0\gRPC_Client_Product_Catalog.pdb
 C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Client_Product_Catalog\obj\Debug\net9.0\gRPC_Client_Product_Catalog.genruntimeconfig.cache
 C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Client_Product_Catalog\obj\Debug\net9.0\ref\gRPC_Client_Product_Catalog.dll
+C:\Users\mardo\RiderProjects\Product_Catalog_gRPC_System\gRPC_Client_Product_Catalog\obj\Debug\net9.0\gRPC_Client_Product_Catalog.sourcelink.json

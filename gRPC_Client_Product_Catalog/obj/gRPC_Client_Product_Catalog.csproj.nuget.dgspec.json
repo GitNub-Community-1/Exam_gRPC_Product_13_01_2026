@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[2.64.0, )"
             },
+            "Grpc.Net.Client": {
+              "target": "Package",
+              "version": "[2.64.0, )"
+            },
             "Grpc.Tools": {
               "suppressParent": "All",
               "target": "Package",

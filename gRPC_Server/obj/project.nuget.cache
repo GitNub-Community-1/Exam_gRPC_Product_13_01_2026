@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "KW7T0pHYAgo=",
+  "dgSpecHash": "fJ0cljPrIEk=",
   "success": true,
   "projectFilePath": "C:\\Users\\mardo\\RiderProjects\\Product_Catalog_gRPC_System\\gRPC_Server\\gRPC_Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mardo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\mardo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\mardo\\.nuget\\packages\\google.protobuf\\3.27.0\\google.protobuf.3.27.0.nupkg.sha512",
     "C:\\Users\\mardo\\.nuget\\packages\\grpc.aspnetcore\\2.64.0\\grpc.aspnetcore.2.64.0.nupkg.sha512",
     "C:\\Users\\mardo\\.nuget\\packages\\grpc.aspnetcore.server\\2.64.0\\grpc.aspnetcore.server.2.64.0.nupkg.sha512",
@@ -18,6 +19,7 @@
     "C:\\Users\\mardo\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.11\\microsoft.entityframeworkcore.9.0.11.nupkg.sha512",
     "C:\\Users\\mardo\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.11\\microsoft.entityframeworkcore.abstractions.9.0.11.nupkg.sha512",
     "C:\\Users\\mardo\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.11\\microsoft.entityframeworkcore.analyzers.9.0.11.nupkg.sha512",
+    "C:\\Users\\mardo\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\9.0.11\\microsoft.entityframeworkcore.inmemory.9.0.11.nupkg.sha512",
     "C:\\Users\\mardo\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.11\\microsoft.extensions.caching.abstractions.9.0.11.nupkg.sha512",
     "C:\\Users\\mardo\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.11\\microsoft.extensions.caching.memory.9.0.11.nupkg.sha512",
     "C:\\Users\\mardo\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.11\\microsoft.extensions.dependencyinjection.9.0.11.nupkg.sha512",

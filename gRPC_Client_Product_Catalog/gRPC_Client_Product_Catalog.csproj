@@ -10,6 +10,7 @@
     <ItemGroup>
         <PackageReference Include="Grpc.AspNetCore" Version="2.64.0" />
         <PackageReference Include="Grpc.Tools" Version="2.64.0" PrivateAssets="All" />
+        <PackageReference Include="Grpc.Net.Client" Version="2.64.0" />
         <PackageReference Include="Google.Protobuf" Version="3.27.2" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.11"/>
         <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
@@ -42,6 +43,9 @@
         <OutputDir>obj\Debug\net9.0\</OutputDir>
         <Generator>MSBuild:Compile</Generator>
       </Protobuf>
+    </ItemGroup>
+    <ItemGroup>
+        <Protobuf Include="Protos\product.proto" GrpcServices="Client" />
     </ItemGroup>
 
 </Project>
